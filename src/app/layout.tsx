@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/Components/Header";
 import { ThemeProvider } from "next-themes";
 import SubHeader from "@/Components/SubHeader";
+import MainNavigation from "@/Components/MainNavigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,8 +32,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        <SubHeader />
+        <MainNavigation />
         {children}
       </body>
     </html>
