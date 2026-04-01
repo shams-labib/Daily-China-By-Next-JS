@@ -13,6 +13,12 @@ import {
 } from "react-icons/fa";
 import { RiWechatFill } from "react-icons/ri";
 
+// ১. সোশ্যাল আইকনের জন্য ইন্টারফেস বা টাইপ ডিফাইন করা (এটি এরর ফিক্স করবে)
+interface SocialIconProps {
+  icon: React.ReactNode;
+  bg: string;
+}
+
 const Footer = () => {
   const scrollToTop = () => {
     if (typeof window !== "undefined") {
@@ -116,7 +122,7 @@ const Footer = () => {
             </div>
             <div className="text-sm text-gray-700 space-y-4">
               <p>
-                <span className="font-bold">Currency:</span>
+                <span className="font-bold">Currency:</span> USD
               </p>
               <p className="text-gray-500">31 students applied today</p>
             </div>
@@ -130,11 +136,25 @@ const Footer = () => {
           </p>
         </div>
       </div>
+
+      {/* Floating Chat Button - Optional/Recommended based on Lucide imports */}
+      <button className="fixed bottom-6 right-6 bg-red-600 text-white p-4 rounded-full shadow-2xl hover:bg-red-700 transition-all z-50">
+        <MessageSquare size={24} />
+      </button>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-24 right-8 text-gray-400 hover:text-gray-800 transition-colors z-50"
+      >
+        <ChevronUp size={24} />
+      </button>
     </footer>
   );
 };
 
-const SocialIcon = ({ icon, bg }) => (
+// ২. এখানে টাইপটি অ্যাসাইন করে দেওয়া হয়েছে ( SocialIconProps )
+const SocialIcon = ({ icon, bg }: SocialIconProps) => (
   <a
     href="#"
     className={`${bg} text-white w-8 h-8 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center`}
