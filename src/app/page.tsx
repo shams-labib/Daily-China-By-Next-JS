@@ -1,4 +1,5 @@
 import HeroSection from "@/Components/HeroSection";
+import HowToApply from "@/Components/Page/HowToApply";
 import Places from "@/Components/Page/Place";
 import Testimonials from "@/Components/Page/Testimonials";
 import UniversityLogos from "@/Components/Page/UniversityLogos";
@@ -13,6 +14,7 @@ export default function Home() {
       <UniversityLogos />
       <WhyApply />
       <Testimonials />
+      <HowToApply />
     </div>
   );
 }
