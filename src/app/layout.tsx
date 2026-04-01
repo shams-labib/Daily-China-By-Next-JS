@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Daily China",
+  title: "China Scholar",
   description: "Daily china is a news paper website",
 };
 
