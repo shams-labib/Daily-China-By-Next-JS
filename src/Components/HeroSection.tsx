@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://i.ibb.co.com/Z6gfq83v/Gemini-Generated-Image-cwr5xbcwr5xbcwr5.png')`, // এখানে আপনার নিজের ইমেজ লিঙ্ক দিন
+          backgroundImage: `url('/bannar.png')`, // public ফোল্ডারের জন্য সঠিক পাথ ফরম্যাট
         }}
       >
         <div className="absolute inset-0 bg-black/60 backdrop-brightness-75"></div>
