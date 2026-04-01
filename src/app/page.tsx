@@ -2,6 +2,7 @@ import HeroSection from "@/Components/HeroSection";
 import FeaturedIn from "@/Components/Page/FeaturedIn";
 import HowToApply from "@/Components/Page/HowToApply";
 import Places from "@/Components/Page/Place";
+import RecentBlogs from "@/Components/Page/RecentBlogs";
 import Testimonials from "@/Components/Page/Testimonials";
 import UniversityLogos from "@/Components/Page/UniversityLogos";
 import WhyApply from "@/Components/Page/WhyApply";
@@ -17,6 +18,7 @@ export default function Home() {
       <Testimonials />
       <HowToApply />
       <FeaturedIn />
+      <RecentBlogs />
     </div>
   );
 }
