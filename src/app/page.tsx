@@ -1,4 +1,7 @@
+import FloatingActions from "@/Components/FloatingActions";
+import Footer from "@/Components/Footer";
 import HeroSection from "@/Components/HeroSection";
+import Contact from "@/Components/Page/Contact";
 import FeaturedIn from "@/Components/Page/FeaturedIn";
 import HowToApply from "@/Components/Page/HowToApply";
 import Places from "@/Components/Page/Place";
@@ -19,6 +22,9 @@ export default function Home() {
       <HowToApply />
       <FeaturedIn />
       <RecentBlogs />
+      <Contact />
+      <Footer />
+      <FloatingActions />
     </div>
   );
 }

@@ -44,7 +44,7 @@ const MainNavigation = () => {
               <Vegan size={24} />
             </span>
             <h1 className="text-xl md:text-2xl font-bold italic tracking-tight">
-              Daily China
+              China Scholar
             </h1>
           </div>
 

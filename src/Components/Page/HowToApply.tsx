@@ -13,7 +13,7 @@ const HowToApply = () => {
   ];
 
   return (
-    <section className="bg-white py-16 w-full">
+    <section className="bg-[#f3f4f6] py-16 w-full">
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-12">
         {/* Left Side: YouTube Video Embed */}
         <div className="w-full lg:w-1/2">

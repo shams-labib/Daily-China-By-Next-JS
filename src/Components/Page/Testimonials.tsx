@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { X, Construction } from "lucide-react";
 // Swiper React components and styles
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -10,6 +11,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Testimonials = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleUpdateClick = () => {
+    setIsModalOpen(true);
+  };
+
   // ভিডিও/ইমেজ স্লাইডার ডেটা
   const videoSlides = [
     {
@@ -55,7 +62,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="bg-white py-16 w-full overflow-hidden">
+    <section className="bg-white py-16 w-full overflow-hidden relative">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-700 mb-10">
           Helping Thousands of Students Study in China
@@ -68,7 +75,7 @@ const Testimonials = () => {
             navigation
             pagination={{ clickable: true }}
             autoplay={{ delay: 5000 }}
-            className="rounded-xl shadow-2xl"
+            className="rounded-xl shadow-md"
           >
             {videoSlides.map((slide) => (
               <SwiperSlide key={slide.id}>
@@ -80,7 +87,10 @@ const Testimonials = () => {
                   />
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                    <div className="w-16 h-16 bg-red-600/90 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                    <div
+                      onClick={handleUpdateClick}
+                      className="w-16 h-16 bg-red-600/90 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform"
+                    >
                       <div className="ml-1 border-y-[10px] border-y-transparent border-l-[18px] border-l-white"></div>
                     </div>
                   </div>
@@ -127,7 +137,10 @@ const Testimonials = () => {
                   <p className="text-gray-600 text-sm leading-relaxed flex-grow">
                     {review.text}
                   </p>
-                  <button className="text-red-500 text-xs font-semibold mt-4 text-left hover:underline">
+                  <button
+                    onClick={handleUpdateClick}
+                    className="text-red-500 text-xs font-semibold mt-4 text-left hover:underline cursor-pointer"
+                  >
                     Read more
                   </button>
                 </div>
@@ -139,13 +152,55 @@ const Testimonials = () => {
           <div className="flex flex-col items-center mt-4">
             <div className="custom-pagination mb-4"></div>
             <div className="w-full text-right">
-              <button className="text-red-500 font-semibold text-sm hover:underline">
+              <button
+                onClick={handleUpdateClick}
+                className="text-red-500 font-semibold text-sm hover:underline cursor-pointer"
+              >
                 See More Reviews
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* --- WEBSITE UPDATING MODAL --- */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsModalOpen(false)}
+          ></div>
+
+          <div className="relative bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl animate-in fade-in zoom-in duration-300">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="flex justify-center mb-4 text-red-500">
+              <Construction size={50} />
+            </div>
+
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">
+              Website Updating
+            </h3>
+
+            <p className="text-gray-600 mb-6 text-sm">
+              We are updating our media library for the 2026 intake. Video
+              testimonials and detailed reviews will be back online shortly!
+            </p>
+
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="w-full bg-gray-900 hover:bg-black text-white font-bold py-3 rounded-lg transition-colors cursor-pointer"
+            >
+              Got it!
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Swiper Navigation Custom Style */}
       <style
@@ -163,7 +218,7 @@ const Testimonials = () => {
           font-weight: bold;
         }
         .swiper-pagination-bullet-active {
-          background: #dc2626 !react;
+          background: #dc2626 !important;
         }
       `,
         }}
