@@ -3,14 +3,15 @@
 import React from "react";
 
 const Contact = () => {
-  const handleSubmit = (e) => {
+  // TypeScript এরর ফিক্স করতে 'e' এর টাইপ React.FormEvent দেওয়া হয়েছে
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Add your subscription logic here
     console.log("Subscribing...");
   };
 
   return (
-    <section className="bg-[#28293d] py-15 px-6">
+    <section className="bg-[#28293d] py-16 px-6">
       <div className="max-w-4xl mx-auto text-center">
         {/* Main Heading */}
         <h2 className="text-white text-2xl md:text-3xl font-bold mb-10 tracking-tight">

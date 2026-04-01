@@ -6,7 +6,8 @@ import { Search, X, Construction } from "lucide-react";
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleAction = (e) => {
+  // 'e' এর টাইপ 'any' দিয়ে ফিক্স করা হয়েছে যাতে TypeScript এরর না দেয়
+  const handleAction = (e?: React.FormEvent | React.MouseEvent) => {
     if (e) e.preventDefault();
     setIsModalOpen(true);
   };
@@ -83,7 +84,7 @@ const HeroSection = () => {
           ></div>
 
           {/* Modal Content */}
-          <div className="relative bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl animate-in fade-in zoom-in duration-300">
+          <div className="relative bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
