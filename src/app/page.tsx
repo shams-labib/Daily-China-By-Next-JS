@@ -1,4 +1,5 @@
 import HeroSection from "@/Components/HeroSection";
+import FeaturedIn from "@/Components/Page/FeaturedIn";
 import HowToApply from "@/Components/Page/HowToApply";
 import Places from "@/Components/Page/Place";
 import Testimonials from "@/Components/Page/Testimonials";
@@ -15,6 +16,7 @@ export default function Home() {
       <WhyApply />
       <Testimonials />
       <HowToApply />
+      <FeaturedIn />
     </div>
   );
 }
