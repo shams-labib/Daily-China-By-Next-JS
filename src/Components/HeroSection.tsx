@@ -25,7 +25,7 @@ const HeroSection = () => {
           <input
             type="text"
             placeholder="Search by university, program, or city"
-            className="w-full py-3 md:py-5 px-6 text-gray-800 outline-none text-base md:text-lg"
+            className="w-full py-3 md:py-5 px-6 text-gray-800 outline-none text-base md:text-lg bg-white"
           />
           <button className="bg-blue-500 hover:bg-blue-600 text-white p-3 md:p-5 transition-colors">
             <Search size={24} />
